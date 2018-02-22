@@ -378,3 +378,8 @@ SELECT * FROM vteamRoster;
 DESCRIBE vteamRoster;
 SHOW CREATE VIEW vteamRoster;
 SELECT player.lastName, player.firstName, team.teamName FROM roster INNER JOIN player ON player.ID = roster.playerID INNER JOIN team ON team.ID = roster.teamID WHERE team.teamName = 'Boston Red Sox';
+
+SELECT player.lastName, player.firstName, batting.rank, batting.battingAvg FROM batting RIGHT JOIN player ON player.ID= batting.playerID;
+SELECT roster.playerID, team.teamName FROM roster RIGHT JOIN team ON team.ID= roster.teamID;
+SELECT team.teamName FROM roster LEFT JOIN team ON team.ID= roster.teamID;
+SELECT team.teamName FROM roster RIGHT JOIN team ON team.ID= roster.teamID WHERE roster.playerID is null;
