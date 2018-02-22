@@ -383,3 +383,8 @@ SELECT player.lastName, player.firstName, batting.rank, batting.battingAvg FROM 
 SELECT roster.playerID, team.teamName FROM roster RIGHT JOIN team ON team.ID= roster.teamID;
 SELECT team.teamName FROM roster LEFT JOIN team ON team.ID= roster.teamID;
 SELECT team.teamName FROM roster RIGHT JOIN team ON team.ID= roster.teamID WHERE roster.playerID is null;
+
+SELECT batting.battingAvg, batting.ID, team.teamName FROM batting INNER JOIN team ON team.ID = batting.teamID ORDER BY battingAvg DESC;
+SELECT firstName, lastName, ABBR, hits FROM baseball.vbattingleaders ORDER BY hits DESC;
+SELECT firstName, lastName, ABBR, hits FROM baseball.vbattingleaders ORDER BY hits ASC;
+SELECT * FROM baseball.vbattingleaders ORDER BY teamName, atbats DESC;
